@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Exo+2&display=swap');
+
+ /*------------- Whole Document---------------- */
+
+/* Change font type of all headings tags */
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Anonymous Pro', monospace;
+}
+
+/* Change font type of all paragraph tags */
+p{
+  font-family: 'Exo 2', sans-serif;
+}
+
+div.main-container {
+  max-width: 1600px !important;
+}
+
+.user-selec-none svg-container {height=800px}

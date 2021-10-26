@@ -1,18 +1,40 @@
 ---
-title: "My Website"
+title: "DSAN 503 - A5"
+geometry: margin=2cm
 ---
 
-Hello, Website!
+Hello, and thank you for visiting my website for Data Science and Analytics 503 Assignment 5. For this assignment the plots utilized data provided by A Research Project of the Distributed Systems Group. The authors are Wilhelm Kleiminger, Christian Beckel. You can visit their website at "<a href='http://www.vs.inf.ethz.ch/'>http://www.vs.inf.ethz.ch/</a>. Note that the eco directory containing the data has been omitted from this repo due to its size and only the intermediate data sets have been retained. To create the visualizations there were 4 files created, `data_munging_plotly.py`, `data_munging_altair.py`, `plotly_.py` and `altair_.py`. Note the underscore had to be added to `altair_.py` and `plotly_.py` due to module import complication when saving a file name the same name as a module import.
+<br>
 
-For more information about simple R Markdown websites, please read the documentation at https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html.
-
-Please also note that simple R Markdown sites are _not_ based on **blogdown**. They are probably good for websites with only a few Rmd documents. For larger-scale and more sophisticated websites (such as blogs), you may want to use **blogdown** instead: https://github.com/rstudio/blogdown.
-
-
-```{r}
-library(ggplot2)
-
-ggplot(iris, aes(Sepal.Length, Sepal.Width))+
-  geom_point()
-  
+````{=html}
+```{r, echo=FALSE, results='asis'}
+xfun::file_string('plotly.html')
 ```
+````
+Hourly power consumption of various household appliances. Data provided by A Research Project of the Distributed Systems Group. <a href='http://www.vs.inf.ethz.ch/'>http://www.vs.inf.ethz.ch/</a> - Wilhelm Kleiminger, Christian Beckel"
+    
+<br>
+
+For the plotly chart the main question to answer was how different appliances use different amounts of power and to gain some insight what their percentage of total power consumption is. For this plot it was assumed that the plug data provided in the original data sum together to constitute most of the power usage of a given household. Since the data was very granular it was decided to take the mean of the aggregated power consumption by hour so that each plug would have a single record for every hour of every day. This allowed the data to be somewhat smoothed out as power data is indicative of drastic swings it. Reducing to hour still allowed the viewer to see the swings in power without it becoming an overly complicated plot. Additionally due so a high number of missing values a particular month was chosen in which most of the data was present. Then the small number of missing values were filled with the closest values.
+  
+<br>
+
+The geometry chosen for this plot is a stacked area chart. The stacked area reader can get a sense of power consumption proportions by appliance over time. To further enhance the plot a proportion of total or percentage of area was used to fill the entire plot. This was done for 2 reasons. The first being, this technique suggests to the reader that the sum of the components is the total power usage. The second and more practical is that power consumption is erratic, and this allows for the entire plot area to be used when there are large spikes in power consumption.  For the reader to further explore the data a selector was added so that they can select whichever appliances they want to view, and the plot readjusts to show only those features. An animation with a play button was also added as a bonus. Final features of interactivity are the hover on demand details and tooltips. To finish off this plot custom labels, fonts and colors were selected and implemented into the plot.
+
+<br>
+
+````{=html}
+```{r, echo=FALSE, results='asis'}
+xfun::file_string('altair.html')
+```
+````
+Hourly power consumption of various household appliances. Data provided by A Research Project of the Distributed Systems Group. <a href='http://www.vs.inf.ethz.ch/'>http://www.vs.inf.ethz.ch/</a> - Wilhelm Kleiminger, Christian Beckel"
+
+<br>
+
+For the altair plot the main question to be answered was to determine which power phases were most often used by each household and to determine if there might be any patterns for higher usage households. To answer these questions the smart meter data sets were used. Several months were selected and combined into a singular data set for each household. Additionally, to reduce the granularity and make the chart more readable the aggregated mean of each day taken. So that each household had a single record for each day. A single record consists of the total power usage and the power usage of each of the 3 phases.
+
+<br>
+
+The geometry chosen for this plot was a layered area chart next to a line chart. In this instance an overlapping or layered area chart was chosen because the household add up to an arbitrary total which does not contribute to the visual narrative. However, the area portion still suggests to the reader that power usage is a cumulative feature. For the right-hand line chart, the geometry was chosen because it is one of the best ways to display sequential data.  Both charts are interactive and have a feature selector which allows the reader to select a subset of the data from both charts. This allows the reader to select an area on the left and on the right the 3 power phases are shown for that household while the others are greyed out. To finish off this plot custom labels, fonts and colors were selected and implemented into the plot. 
+

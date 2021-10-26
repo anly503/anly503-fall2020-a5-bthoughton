@@ -2,4 +2,4 @@
 title: "About This Website"
 ---
 
-More about this website.
+This website was created for Benjamin Houghton's Georgetown Data Science and Analytics Advanced DAta Visualization course. This website is the deliverable for assignment 5.
