@@ -38,3 +38,4 @@ For the altair plot the main question to be answered was to determine which powe
 
 The geometry chosen for this plot was a layered area chart next to a line chart. In this instance an overlapping or layered area chart was chosen because the household add up to an arbitrary total which does not contribute to the visual narrative. However, the area portion still suggests to the reader that power usage is a cumulative feature. For the right-hand line chart, the geometry was chosen because it is one of the best ways to display sequential data.  Both charts are interactive and have a feature selector which allows the reader to select a subset of the data from both charts. This allows the reader to select an area on the left and on the right the 3 power phases are shown for that household while the others are greyed out. To finish off this plot custom labels, fonts and colors were selected and implemented into the plot. 
 
+<br><br>

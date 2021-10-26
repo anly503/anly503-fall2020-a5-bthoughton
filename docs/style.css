@@ -16,4 +16,6 @@ div.main-container {
   max-width: 1600px !important;
 }
 
-.user-selec-none svg-container {height=800px}
+div {
+  max-height: 600px;
+}
